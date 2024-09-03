@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>loading...</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="persist/favicon.png">
+    <link rel="stylesheet" href="persist/stylesheet.css">
+</head>
+
+<body>
+        <div class="profile-container">
+            <img src="https://i.scdn.co/image/ab6775700000ee85da08b0ed3681db5457ffd0d0" alt="Marcus Rashford"
+                class="profile-picture">
+            <div class="profile-info">
+                <h1 class="display-name">your_spotify_name</h1>
+                <!-- change this to your name (it's like a default entry)-->
+                <p class="follower-count"></p>
+            </div>
+        </div>
+
+        <div id="now-playing-container" class="now-playing-container">
+            <div id="playback-info" class="playback-info">
+                <div class="playback-details">
+                    <h2 id="track-name">loading...</h2>
+                    <p id="artist-name">...</p>
+                </div>
+                <div class="progress-bar-container">
+                    <div id="progress-bar" class="progress-bar"></div>
+                    <span id="current-time">0:00</span>
+                    <span id="total-time">0:00</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="toggle-container">
+            <input type="radio" id="playlists" name="content-toggle">
+            <label for="playlists" onclick="toggleContent('playlists')">playlists</label>
+            <input type="radio" id="recently-played" name="content-toggle">
+            <label for="recently-played" onclick="toggleContent('recently-played')">zuletzt gehört</label>
+        </div>
+
+        <div id="playlist-container" class="playlist-container"></div>
+        <div id="recently-played-container" class="recently-played-container"></div>
+
+        <script src="javascript.js"></script>
+        <script>
+            function toggleContent(contentType) {
+                const playlistContainer = document.getElementById('playlist-container');
+                const recentlyPlayedContainer = document.getElementById('recently-played-container');
+
+                if (contentType === 'playlists') {
+                    playlistContainer.style.visibility = 'visible';
+                    playlistContainer.style.display = 'flex';
+                    recentlyPlayedContainer.style.visibility = 'hidden';
+                    recentlyPlayedContainer.style.display = 'none';
+                } else if (contentType === 'recently-played') {
+                    playlistContainer.style.visibility = 'hidden';
+                    playlistContainer.style.display = 'none';
+                    recentlyPlayedContainer.style.visibility = 'visible';
+                    recentlyPlayedContainer.style.display = 'flex';
+                }
+            }
+        </script>
+</body>
+
+</html>

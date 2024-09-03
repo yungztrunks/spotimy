@@ -1,0 +1,263 @@
+body {
+    font-family: 'Helvetica Neue', sans-serif;
+    background-color: #121212;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0;
+    min-height: 40vh;
+}
+
+.profile-container {
+    margin-top: 2vw;
+    display: flex;
+    align-items: center;
+}
+
+.profile-picture {
+    border-radius: 50%;
+    margin-right: 20px;
+    width: 80px;
+    height: 80px;
+}
+
+.profile-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.display-name {
+    font-size: 48px;
+    margin: 0;
+}
+
+.follower-count {
+    font-size: 32px;
+    margin: 0;
+    color: #b3b3b3;
+}
+
+.playlist-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.playlist-card {
+    background-color: #282828;
+    display: flex;
+    border-radius: 8px;
+    margin: 4px;
+    overflow: hidden;
+    width: 300px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+    flex: 0 0 auto;
+}
+
+.playlist-card:hover {
+    transform: scale(1.05);
+}
+
+.playlist-image {
+    width: 160px;
+    height: auto;
+    border-radius: 8px;
+}
+
+.playlist-info {
+    padding: 15px;
+}
+
+.playlist-name {
+    font-size: 18px;
+    margin: 0;
+}
+
+.playlist-owner {
+    font-size: 14px;
+    color: #b3b3b3;
+    margin: 8px 0;
+}
+
+.track-count {
+    font-size: 14px;
+    color: #b3b3b3;
+    margin: 0;
+}
+
+.playlist-container,
+.recently-played-container {
+    overflow-y: auto;
+    max-height: 50vh; /* Adjust the max height as needed */
+}
+
+.recently-played-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.track-card {
+    background-color: #282828;
+    border-radius: 8px;
+    margin: 4px;
+    overflow: hidden;
+    width: 300px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+    display: flex; /* Add flex display for proper alignment */
+}
+
+.track-card:hover {
+    transform: scale(1.05);
+}
+
+.track-image {
+    width: 160px;
+    height: auto;
+    border-radius: 8px; /* Adjusted border radius */
+}
+
+.track-info {
+    display: flex;
+    flex-direction: column;
+    padding: 4px;
+    width: 100%; /* Take up the remaining width */
+}
+
+.track-name {
+    font-size: 18px;
+    margin: 2px;
+}
+
+.artist-name, .album-details, .release-date, .played-at {
+    font-size: 14px;
+    color: #b3b3b3;
+    margin: 5px 0;
+}
+
+.now-playing-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin: 4vh;
+}
+
+.playback-info {
+    width: 30vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background-color: #282828;
+    border-radius: 20px; /* Increased border radius for a larger box */
+    padding: 30px; /* Increased padding for more space */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Adjusted box shadow */
+}
+
+.playback-details {
+    margin-bottom: 30px; /* Increased margin for more space */
+}
+
+h2, p {
+    margin: 0;
+    color: #fff;
+}
+
+.progress-bar-container {
+    position: relative;
+    width: 100%;
+    height: 2px; /* Increased height for a larger progress bar */
+    background-color: #383838;
+    border-radius: 36px; /* Increased border radius for a larger box */
+    overflow: hidden;
+}
+
+.progress-bar {
+    height: 100%;
+    width: 0;
+    background-color: #1db954;
+    border-radius: 40px; /* Increased border radius for a larger box */
+    transition: width 0.5s ease-in-out;
+}
+
+span {
+    font-size: 14px; /* Increased font size for better visibility */
+    color: #b3b3b3;
+    position: absolute;
+}
+
+#current-time {
+    left: 0; /* Adjusted left position */
+    margin-left: 15px; /* Add margin to position it to the right of the progress bar */
+}
+
+#total-time {
+    right: 0; /* Adjusted right position */
+    margin-right: 15px; /* Add margin to position it to the left of the progress bar */
+}
+
+@media screen and (max-width: 900px) {
+    .profile-container {
+        flex-direction: column;
+        text-align: center;
+    }
+    .profile-info {
+        margin-top: 10px; /* Add margin between profile picture and text on smaller screens */
+    }
+}
+.toggle-container {
+    display: flex;
+    margin: 20px;
+}
+
+input[type="radio"] {
+    display: none;
+}
+
+label {
+    cursor: pointer;
+    padding: 10px;
+    font-size: 18px;
+    color: #fff;
+    background-color: #282828;
+    border-radius: 8px;
+    margin-right: 10px;
+    transition: background-color 0.3s ease;
+}
+
+input[type="radio"]:checked + label {
+    background-color: #1db954;
+}
+
+#recently-played-container {
+    visibility: hidden;
+}
+
+#playlist-container {
+    visibility: hidden;
+}
+
+.playlist-card,
+.track-card {
+    box-sizing: border-box;
+}
+
+.playlist-container::-webkit-scrollbar,
+.recently-played-container::-webkit-scrollbar {
+    width: 10px;
+}
+
+.playlist-container::-webkit-scrollbar-track,
+.recently-played-container::-webkit-scrollbar-track {
+    background: black;
+}
+
+.playlist-container::-webkit-scrollbar-thumb,
+.recently-played-container::-webkit-scrollbar-thumb {
+    background-color: #999;
+}
